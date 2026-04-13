@@ -1,0 +1,77 @@
+.categorySection {
+  background-color: #ffffff;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin: 20px 20px 20px 0px ;
+  max-height: 70vh;
+  overflow: auto;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 3px;
+}
+
+/* track (background) */
+::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+/* handle (the moving part) */
+::-webkit-scrollbar-thumb {
+  background: #e2e0e0;
+  border-radius: 6px;
+}
+
+/* handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #e2e0e0;
+  border-radius: 30%;
+  margin: 10px;
+}
+
+
+.mainslider #mainCarousel .carousel-inner .carousel-item {
+  height: 60vh;
+  max-height: 500px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.mainslider #mainCarousel .carousel-inner .carousel-item img {
+  height: 100% !important;
+  width: 100% !important;
+  object-fit: cover !important;
+}
+
+.mainslider {
+  position: relative;
+}
+
+.btn-mainsection {
+  background-color: #030712;
+  border: none !important;
+  padding: 10px 20px;
+  background-color: var(--main-color) !important;
+  width: white;
+  font-size: 16px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.mainTitle{
+  width: 300px;
+  height: max-content;
+  background-color: transparent;
+  position: absolute;
+  top: 50%;
+  left: 15%;
+  transform: translateY(-50%);
+  z-index: 1;
+  color:  var(--main-color) !important;
+}
+.mainTitle h1{
+  font-weight: bolder;
+  font-size: 50px;
+}

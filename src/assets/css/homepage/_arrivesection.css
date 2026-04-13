@@ -1,0 +1,166 @@
+.card-produit .img-produit {
+
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.card-produit {
+    /* max-width: 270px; */
+    margin-bottom: 20px;
+    /* background-color: #474747 !important; */
+}
+
+.card-produit .img-produit img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.like-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: rgb(212, 212, 212);
+}
+
+.discount-chip {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.add-to-card {
+    position: absolute;
+    bottom: -40px;
+    right: 10px;
+    background-color: var(--main-color);
+    color: var(--primary-color);
+    font-size: 12px;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: large;
+    border-radius: 50%;
+}
+
+.card-title {
+    font-weight: bold;
+}
+
+.ship-organic {
+    position: absolute;
+    bottom: -30px;
+    left: 10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background-color: #239923;
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    padding: 5px 10px;
+    border-radius: 50px;
+    text-transform: uppercase;
+}
+
+.badge-organic .leaf-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #5cb85c;
+    border-radius: 50%;
+    width: 26px;
+    height: 26px;
+    font-size: 15px;
+}
+
+/* ##################################################### */
+.product-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px 20px 18px;
+    max-width: 320px;
+}
+
+.price-sale {
+    color: #e8232a;
+}
+
+.price-sale span:nth-child(1) {
+    font-size: 26px;
+    font-weight: 700;
+}
+.price-sale span:nth-child(2){
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.price-original {
+    color: #999;
+    margin-left: 8px;
+}
+.price-original span:nth-child(1) {
+    font-size: 16px;
+    text-decoration: line-through;
+
+}
+.price-original span:nth-child(2){
+    font-size: 10px;
+
+}
+
+.divider {
+    border: none;
+    border-top: 1px solid #ececec;
+    margin: 14px 0;
+}
+
+.stock-warning {
+    color: #b0b0b0;
+    font-size: 14px;
+    margin-bottom: 14px;
+}
+
+.stock-bar-track {
+    width: 100%;
+    height: 7px;
+    border-radius: 50px;
+    background: #f0f0f0;
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+
+.stock-bar-fill {
+    height: 100%;
+    width: 44%;
+    /* adjust based on stock level */
+    border-radius: 50px;
+    background: linear-gradient(to right, #f5c518, #e8232a);
+}
+
+.available-label {
+    color: #999;
+    font-size: 14px;
+}
+
+.available-count {
+    color: #222;
+    font-size: 20px;
+    font-weight: 700;
+    margin-left: 6px;
+}
+.sectionTitle h4 {
+    font-size: 24px;
+    font-weight: 700;
+}
+.sectionTitle p {
+    font-size: 14px;
+    color: #bdbdbd;
+
+}

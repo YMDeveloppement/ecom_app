@@ -1,0 +1,70 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --main-color:#634C9F;
+  --txt-black-main:#030712;
+  --secondery-color:#5CB85C;
+  --txt-gray-main:#B0B0B0;
+  --second-gray:#D1D5DB;
+  /* figma colors */
+  --yellow:#FACC15;
+  --light-gray: #E5E7EB;
+  --second-gray: #D1D5DB;
+  --txt-black-main: #030712;
+  --white: #FFFFFF;
+  --txt-gray-main: #B0B0B0;
+  --secondery-color: #5CB85C;
+  --main-color: #634C9F;
+  --light-gray: #E5E7EB;
+  --yellow: #FACC15;
+  --main-color: #634C9F;
+  --txt-gray-main: #6B7280;
+  --txt-black-main: #111827;
+  --white: #F2F2F2;
+  --second-gray: #212529;
+  --secondery-color: #C93AAF;
+  --green: #16A34A;
+  --black: #000000;   
+  --dark-gray: #374151;
+  --blue: #0891B2;
+  --dark-green: #166534;
+  --orange: #EA580C;
+  --light-yellow: #FEFDD5;
+  --dark-orange: #7C2D12;
+  --light-beige: #FFF7ED;
+  --red:#DC2626;
+} 
+
+* {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+   font-family: "Inter", sans-serif !important;
+  font-optical-sizing: auto;
+  font-style: normal;
+  
+}
+
+body {
+  min-height: 100vh;
+  background-color:  #F3F4F6;
+
+}
+
+#root{
+  min-height: 100vh;
+}
+
+ul , li  {
+  list-style-type: none;
+}

@@ -1,0 +1,100 @@
+.icon-advent{
+    width: 40px;
+    height: 40px;
+}
+.adventage-section{
+    background-color:  #F3F4F6;
+    max-width: 100%;
+    padding: 1rem;
+    overflow: hidden;
+}
+.imageContaine{
+    background-color:  #F3F4F6;
+    height: 85px;
+    width: 85px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.imageContaine img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+
+.slider-content h6{
+    color:var(--txt-black-main) ;
+    font-weight: bold;
+}
+
+.swip-container{
+    width: 80%;
+    margin: 3rem 0 ;
+}
+@media (min-width: 992px) {
+  .weekly-product-section img {
+    max-height: 260px;
+  }
+}
+/* ################# weekly-product-section #################### */
+
+/* Base */
+.weekly-product-section {
+  width: 100%;
+  overflow: hidden;
+  padding: 16px 0;
+}
+
+.weekly-product-section .row {
+  margin: 0;
+}
+
+.weekly-product-section img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 12px;
+  /* display: block; */
+}
+
+/* Large screens — 3 side by side (default Bootstrap col-4) */
+@media (min-width: 992px) {
+  .weekly-product-section img {
+    max-height: 260px;
+  }
+}
+
+/* Tablets — 2 columns, last image centered below */
+@media (max-width: 991px) and (min-width: 576px) {
+  .weekly-product-section .row > div {
+    width: 50% !important;
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+    margin-bottom: 16px;
+  }
+
+  .weekly-product-section .row > div:last-child {
+    width: 100% !important;
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+
+  .weekly-product-section img {
+    max-height: 220px;
+  }
+}
+
+/* Mobile — 1 column stacked */
+@media (max-width: 575px) {
+  .weekly-product-section .row > div {
+    width: 100% !important;
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    margin-bottom: 12px;
+  }
+
+  .weekly-product-section img {
+    max-height: 180px;
+    border-radius: 8px;
+  }
+}
