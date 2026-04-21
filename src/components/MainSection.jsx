@@ -1,16 +1,29 @@
+import axiosIns from '@/plugins/axiosIns.js'
 import axios from 'axios'
-import React, { use, useState } from 'react'
+import React, { use, useState ,useEffect} from 'react'
 import Categories from '@/components/common/categories'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCartArrowDown } from '@fortawesome/free-solid-svg-icons'
+
 export default function MainSection() {
 
     let [arr_products, setArr_products] = useState([])
     let [img_products, setImg_products] = useState(["/src/assets/imgs/img_product/pro1.jpg", "/src/assets/imgs/img_product/pro2.jpg", "/src/assets/imgs/img_product/pro3.jpg"])
 
-    axios.get('https://api.escuelajs.co/api/v1/products').then(res => {
-        setArr_products([...res.data, res.data])
-    })
+    useEffect(() => {
+        axios.get('https://api.escuelajs.co/api/v1/products')
+            .then(res => {
+                setArr_products(res.data)
+            })
+            .catch(err => console.log(err))
+    }, [])
+    
+    function getMe(){
+        axiosIns.get('/me').then((res)=>{
+            console.log(res)
+        })
+    }
+
     return (
         <div className="px-4 ">
             <div className="row align-items-start">
@@ -61,7 +74,7 @@ export default function MainSection() {
                         <div className="mainTitle">
                             <h1 className=''>Welcome to E-ShopStore </h1>
                             <h6 className='second-title'><em>Fresh and Organic Products for Your Healthy Lifestyle</em></h6>
-                            <button type="button" className=" btn-mainsection btn btn-primary">Shop Now <FontAwesomeIcon icon={faCartArrowDown} /></button>
+                            <button type="button" onClick={getMe} className=" btn-mainsection btn btn-primary">Shop Now <FontAwesomeIcon icon={faCartArrowDown} /></button>
 
                         </div>
                         <div id="mainCarousel" className="carousel slide" data-bs-ride="carousel">
@@ -74,7 +87,7 @@ export default function MainSection() {
                             <div className="carousel-inner">
                                 {img_products.slice(0, 3).map((item, index) => {
                                     return (
-                                        <div className={`carousel-item ${index === 0 ? 'active' : ''}`}>
+                                        <div className={`carousel-item ${index === 0 ? 'active' : ''}`} key={index}>
                                             <img src={item} className="d-block w-100" alt={`img${index + 1}`} />
                                         </div>
                                     )

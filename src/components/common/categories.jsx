@@ -1,15 +1,18 @@
+// import axiosIns from '@/plugins/axiosIns.js'
 import axios from 'axios'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import "@/assets/css/mainsection.css"
 
 function LinksNav() {
     
     let [arr_categories, setArr_categories] = useState([])
-    
-    axios.get('https://kolzsticks.github.io/Free-Ecommerce-Products-Api/main/products.json').then(res => {
-        let arr_cat = Object.values(res.data).map(item => item.category)
-        setArr_categories([... new Set(arr_cat) , ... new Set(arr_cat)  ])
-    })
+    useEffect(()=>{
+        axios.get('https://kolzsticks.github.io/Free-Ecommerce-Products-Api/main/products.json').then(res => {
+            let arr_cat = Object.values(res.data).map(item => item.category)
+            setArr_categories([... new Set(arr_cat) , ... new Set(arr_cat)  ])
+        })
+
+    },[] )
 
     return (
             <>
@@ -25,7 +28,7 @@ function LinksNav() {
 
                             <div className="accordion accordion-flush" id="accordionExample">
                                 {arr_categories.map((item, index) => (
-                                    <div className="accordion-item">
+                                    <div className="accordion-item" key={index}>
                                         <h2 className="accordion-header">
                                             <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target={`#flush-collapseOne${index}`} aria-expanded="false" aria-controls={`flush-collapseOne${index}`}>
                                                 {item}

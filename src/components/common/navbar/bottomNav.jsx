@@ -1,5 +1,6 @@
+// import axiosIns from '@/plugins/axiosIns.js'
 import axios from 'axios'
-import { useState } from 'react'
+import { useState ,useEffect} from 'react'
 import '@/assets/css/bottomnav.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faList, faTableCellsLarge, faUser, faBasketShopping, faHeart } from '@fortawesome/free-solid-svg-icons'
@@ -7,44 +8,47 @@ import { faList, faTableCellsLarge, faUser, faBasketShopping, faHeart } from '@f
 export default function bottomNav() {
     let [arr_categories, setArr_categories] = useState([])
 
-    axios.get('https://kolzsticks.github.io/Free-Ecommerce-Products-Api/main/products.json').then(res => {
-        let arr_cat = Object.values(res.data).map(item => item.category)
-        setArr_categories([... new Set(arr_cat), ... new Set(arr_cat)])
-    })
+    useEffect(() => {
+        axios.get('https://kolzsticks.github.io/Free-Ecommerce-Products-Api/main/products.json').then(res => {
+            let arr_cat = Object.values(res.data).map(item => item.category)
+            setArr_categories([... new Set(arr_cat), ... new Set(arr_cat)])
+        })
+
+    }, [])
 
     return (
         <>
-            <nav class="bottom-nav navbar bg-body-tertiary fixed-bottom">
-                <div class="container-fluid">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"  data-bs-target="#navcart" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <nav className="bottom-nav navbar bg-body-tertiary fixed-bottom">
+                <div className="container-fluid">
+                    <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navcart" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
                         <div>
                             <FontAwesomeIcon icon={faList} />
                             <p></p>
                         </div>
                     </button>
 
-                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navcategories" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                    <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navcategories" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
                         <div>
                             <FontAwesomeIcon icon={faTableCellsLarge} />
                             <p></p>
                         </div>
                     </button>
 
-                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" aria-label="Toggle navigation">
+                    <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" aria-label="Toggle navigation">
                         <div>
                             <FontAwesomeIcon icon={faBasketShopping} />
                             <p></p>
                         </div>
                     </button>
 
-                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" aria-label="Toggle navigation">
+                    <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" aria-label="Toggle navigation">
                         <div>
                             <FontAwesomeIcon icon={faHeart} />
                             <p></p>
                         </div>
                     </button>
 
-                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" aria-label="Toggle navigation">
+                    <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" aria-label="Toggle navigation">
                         <div>
                             <FontAwesomeIcon icon={faUser} />
                             <p></p>
@@ -53,7 +57,7 @@ export default function bottomNav() {
 
                     {/* ######################################### */}
 
-                    <div class="offcanvas p-3 offcanvas-end" tabindex="-1" id="navcategories" aria-labelledby="offcanvasNavbarLabel">
+                    <div className="offcanvas p-3 offcanvas-end" tabIndex="-1" id="navcategories" aria-labelledby="offcanvasNavbarLabel">
                         <h4>Categories</h4>
                         <div className=" accordion accordion-flush" id="accordionExample">
                             {arr_categories.map((item, index) => (
@@ -73,13 +77,13 @@ export default function bottomNav() {
                         </div>
                     </div>
 
-                    <div class="offcanvas offcanvas-start" tabindex="-1" id="navcart" aria-labelledby="offcanvasNavbarLabel">
-                        <div class="offcanvas-header">
-                            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    <div className="offcanvas offcanvas-start" tabIndex="-1" id="navcart" aria-labelledby="offcanvasNavbarLabel">
+                        <div className="offcanvas-header">
+                            <h5 className="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
+                            <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                         </div>
-                        <div class="offcanvas-body">
-                            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <div className="offcanvas-body">
+                            <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
                                 <li className="nav-item">
                                     <a className="nav-link active" aria-current="page" href="#">Home</a>
                                 </li>

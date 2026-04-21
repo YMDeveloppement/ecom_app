@@ -57,7 +57,7 @@ export default function AdventagesSection() {
                             <SwiperSlide key={index}>
                                 <div className="slider-content d-flex align-items-center card border-0">
                                     <div className="imageContaine">
-                                        <img src={item.path_img} class alt="..." />
+                                        <img src={item.path_img}  alt="..." />
                                     </div>
                                     <div>
                                         <h6 className="pt-2 m-0">{item.title}</h6>

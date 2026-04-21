@@ -1,4 +1,4 @@
-import { Card, Stack, Button, Modal, Form, Alert, Navbar, Container, Row, Col } from 'react-bootstrap';
+import { Card, Button, Row, Col } from 'react-bootstrap';
 import "@/assets/css/login.css"
 import freshImg from '@/assets/imgs/login.jpg'
 import logo from '@/assets/imgs/veryfrais.png'
@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope, faLock } from '@fortawesome/free-solid-svg-icons'
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { login } from '@/plugins/store/slices/authSlice';
+import { loginUser } from '@/plugins/store/slices/authThunks';
 import { useNavigate } from 'react-router-dom';
 
 function Login() {
@@ -14,19 +14,21 @@ function Login() {
     const [password, setPassword] = useState('');
     const dispatch = useDispatch();
     const navigate = useNavigate();
+    const { status, lodding, error } = useSelector(state => state.auth);
 
-    // useEffect(() => {
-    //     console.log('Component [Login] mounted', authSelector.user );
-
-    // }, []);
-
+    useEffect(() => {
+        if (status == "succeeded") {
+            navigate('/')
+        }
+        console.log(status)
+    }, [status]);
     const loginAction = () => {
-        dispatch(login({ email: email, password: password }))
-        navigate('/');
+        dispatch(loginUser({ email: email, password: password }))
     }
 
     return (
         <>
+
             <div className="p-4 d-flex justify-content-center align-items-center" style={{ height: '100vh' }}>
 
                 <Card className='card-login shadow p-0 mb-5 bg-white '>

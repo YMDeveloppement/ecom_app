@@ -1,6 +1,6 @@
 import { Card, Stack, Button, Modal, Form, Alert, Navbar, Container, Row, Col } from 'react-bootstrap';
 import "@/assets/css/login.css"
-import axiosIns from '../../plugins/axios.js';
+import axiosIns from '@/plugins/axiosIns.js';
 import freshImg from '@/assets/imgs/login.jpg'
 import logo from '@/assets/imgs/veryfrais.png'
 import { useState, useEffect } from 'react';

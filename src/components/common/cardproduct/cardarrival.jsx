@@ -21,8 +21,8 @@ export default function CardArrival({ item }) {
                             <span className="visually-hidden">unread messages</span>
                         </span>
                     </div>
-                    <span class="ship-organic ">
-                        <span class="leaf-icon">🌿</span>
+                    <span className="ship-organic ">
+                        <span className="leaf-icon">🌿</span>
                     </span>
                     <div className="add-to-card">
                         <FontAwesomeIcon style={{ color: '#634C9F', marginRight:"1rem" }} icon={faPlus} /> add</div>

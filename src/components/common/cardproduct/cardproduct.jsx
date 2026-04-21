@@ -20,8 +20,8 @@ export default function CardProduct({ item }) {
                         <span className="visually-hidden">unread messages</span>
                     </span>
                 </div>
-                <span class="ship-organic ">
-                    <span class="leaf-icon">🌿</span>
+                <span className="ship-organic ">
+                    <span className="leaf-icon">🌿</span>
                     Organic
                 </span>
                 <div className="add-to-card">

@@ -1,6 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 import {
+    registerUser,
     loginUser,
+    logoutUser,
     refreshTokenUser
 } from '@/plugins/store/slices/authThunks.js'
 import { Nav } from 'react-bootstrap';
@@ -20,6 +22,7 @@ const getinitialState = () => {
 const authSlice = createSlice({
     name: 'auth',
     initialState: getinitialState(),
+
     reducers: {
         resetAuth: (state) => {
             state.user = null
@@ -28,11 +31,22 @@ const authSlice = createSlice({
             state.error = null
             state.isAuthenticated = null
             localStorage.removeItem("userEcom");
+
         },
+
     },
     extraReducers: (builder) => {
         builder
+            // register
+            // .addCase(registerUser.pending, (state) => {
 
+            // })
+            // .addCase(registerUser.fulfilled, (state, action) => {
+
+            // })
+            // .addCase(registerUser.rejected, (state) => {
+
+            // })
             // login
             .addCase(loginUser.pending, (state) => {
                 state.status = 'loading';
@@ -52,19 +66,23 @@ const authSlice = createSlice({
                 state.status = 'failed';
                 state.error = action.payload; // "Wrong password" etc.
             })
-            // refresh
-            .addCase(refreshTokenUser.fulfilled, (state , action) => {
-                state.token = action.payload.token;
-                console.log('state.token ' , state.token )
+            // logout
+            .addCase(logoutUser.rejected, (state) => {
+
+            })
+            // refreshToken
+            .addCase(refreshTokenUser.fulfilled, (state) => {
+                state.status = 'succeeded';
+                state.user = action.payload.user;
+                state.token = action.payload.access_token;
                 state.isAuthenticated = true
+
                 localStorage.setItem("userEcom", JSON.stringify({ 'user': state.user, 'token': state.token }));
                 console.log('Im inside refresh ')
             })
             .addCase(refreshTokenUser.rejected, (state) => {
                 console.log('Im inside refresh ')
-                state.isAuthenticated = false
-                localStorage.removeItem("userEcom");
-                window.location.href = 'auth/login';
+
             })
 
     }

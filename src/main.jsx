@@ -10,9 +10,9 @@ import { BrowserRouter } from 'react-router-dom';
 
 // Import the Provider
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <BrowserRouter>
     <Provider store={store}>
-      <App />
+        <BrowserRouter>
+            <App />
+        </BrowserRouter>
     </Provider>
-  </BrowserRouter>
 )
